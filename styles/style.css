@@ -5,6 +5,10 @@ header{
     color:#ccc;
     overflow: auto;
 }
+
+.active{
+    color: beige;
+}
 header a, main a{
     text-decoration:none;
     color:#ccc;
@@ -27,6 +31,7 @@ header .links{
 
 header a:hover{
     color: beige;
+    transition: 0.3s;
 }
 
 .container{
@@ -74,5 +79,4 @@ main .description .developer-name{
 
 footer{
     background-color:#333;
-    height: 300px;
 }
