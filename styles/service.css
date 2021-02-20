@@ -1,0 +1,25 @@
+.list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    display: block;
+    flex: none;
+    width: 20%;
+    box-sizing: inherit;
+}
+
+
+
+.picture{
+    width: 210px;
+    height: 280px;
+}
+
+img{
+    width: 210px;
+    height: 280px;
+    border-radius: 4px;
+    background: black;
+}

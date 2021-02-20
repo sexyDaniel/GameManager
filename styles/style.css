@@ -5,7 +5,7 @@ header{
     color:#ccc;
     overflow: auto;
 }
-header a{
+header a, main a{
     text-decoration:none;
     color:#ccc;
     padding-right: 20px;
@@ -31,4 +31,48 @@ header a:hover{
 
 .container{
     max-width: 1140px;
+}
+
+main h5{
+    color:#F5F5F5;
+    padding: 20px 0 20px 0;;
+}
+
+main{
+    background-color: rgb(18,18,18);
+    font-family: OpenSans,sans-serif,arial;
+}
+
+main .description{
+    padding-top: 10px;
+    text-align: left;
+    display: grid;
+}
+
+main .description .game-name{
+    color: rgb(245, 245, 245);
+    font-size: 95%;
+}
+
+main ul{
+    margin-bottom: 0;
+}
+
+main img:hover{
+    opacity: 0.65;
+    transition: 0.3s;
+}
+
+main ul li{
+    padding-right: 15px;
+}
+
+main .description .developer-name{
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 95%;
+}
+
+footer{
+    background-color:#333;
+    height: 300px;
 }
