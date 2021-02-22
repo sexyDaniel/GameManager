@@ -1,0 +1,63 @@
+.gameLogo{
+    background-image: url('../Img/egs-rage2-idsoftware-g1a-08-1920x1080-df6bd4fa2108.jpg');
+    background-size: cover;
+    height: 500px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 30px;
+    margin-left: -30px;
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(3px); 
+    height: 500px;
+    width: 100%;
+    font-family: OpenSans,sans-serif,arial;
+    color:rgb(129, 119, 119);
+    font-size: 4.5em;
+    position: relative
+  }
+
+div.blur span{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+.blur button{
+    margin-top: 310px;
+    position: relative;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+}
+
+main{
+    color: #F5F5F5;
+}
+
+main .row{
+    padding-bottom: 50px;
+}
+
+.title, .titleName{
+    display: block;
+}
+
+.title{
+    color: #F5F5F599;
+}
+
+.system-rulse .row{
+    background-color: #262626;
+    border-radius: 4px;
+    padding: 50px 70px 50px 150px;
+}
+
+td{
+    margin-bottom: 20px;
+}

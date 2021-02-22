@@ -1,37 +1,49 @@
-header{
-    background-color: #2a2a2a;
-    padding: 10px 0 10px 0;
+.navigation{
     font-family: OpenSans,sans-serif,arial;
+    height: 100%;
+    width: 320px;
+    position: fixed;
+    background-color:  #2a2a2a;
     color:#ccc;
     overflow: auto;
 }
 
-.active{
-    color: beige;
-}
-header a, main a{
+.navigation a, main a{
     text-decoration:none;
     color:#ccc;
     padding-right: 20px;
+    transition: 0.3s;
 }
 
-header nav{
-    padding-top: 17px;
-    padding-right: 150px;
-    float: right;
-}
-
-header h1{
-    float: left;
-}
-
-header .links{
-    float: right;
-}
-
-header a:hover{
+.navigation a:hover{
     color: beige;
     transition: 0.3s;
+}
+
+.active{
+    color: beige !important;
+}
+
+
+.navigation h1{
+    color:#ccc;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.navigation h6{
+    color:#ccc;
+    text-align: center;
+}
+
+.navigation ul{
+    margin-top: 100px;
+}
+
+.navigation li{
+    margin-top: 30px;
+    font-size: 22px;
+    text-align: center;
 }
 
 .container{
@@ -46,6 +58,9 @@ main h5{
 main{
     background-color: rgb(18,18,18);
     font-family: OpenSans,sans-serif,arial;
+    padding-left: 350px;
+    background-color: rgb(18,18,18);
+    height: 100%;
 }
 
 main .description{
@@ -60,23 +75,15 @@ main .description .game-name{
 }
 
 main ul{
-    margin-bottom: 0;
-}
 
-main img:hover{
-    opacity: 0.65;
-    transition: 0.3s;
+    padding-left: 100px;
 }
 
 main ul li{
-    padding-right: 15px;
+    padding-right: 20px;
 }
 
 main .description .developer-name{
     color: rgba(245, 245, 245, 0.6);
     font-size: 95%;
-}
-
-footer{
-    background-color:#333;
 }

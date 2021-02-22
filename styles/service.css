@@ -10,8 +10,6 @@
     box-sizing: inherit;
 }
 
-
-
 .picture{
     width: 210px;
     height: 280px;
@@ -22,4 +20,14 @@ img{
     height: 280px;
     border-radius: 4px;
     background: black;
+}
+
+main img:hover{
+    opacity: 0.65;
+    transition: 0.3s;
+}
+
+main img{
+    opacity: 1;
+    transition: 0.3s;
 }

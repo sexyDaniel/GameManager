@@ -1,0 +1,62 @@
+.registration{
+    font-family: OpenSans,sans-serif,arial;
+    min-width: 320px;
+    max-width: 470px;
+    background-color: #202020;
+    margin: 0 auto;
+    text-align: center;
+    color:#F4F4F4;
+    border-radius: 5px;
+    padding-top: 40px;
+}
+
+.content{
+    padding-top: 130px;
+}
+
+
+
+form input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 50px;
+    background-color: rgb(59, 59, 59);
+    outline: none;
+    color:#F5F5F5; ;
+}
+
+form button{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 50px;
+    background-color: #037BEE;
+    outline: none !important;
+    color:#F5F5F5; 
+
+}
+
+button:hover {
+    background: #1d49aa;
+  }
+  
+input:focus { 
+    color: #F5F5F5;
+}
+::-webkit-input-placeholder{
+    color: #F5F5F5;
+}
+
+.restriction{
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 60px;
+    padding-top: 30px;
+}
