@@ -13,21 +13,27 @@
 .picture{
     width: 210px;
     height: 280px;
-}
-
-img{
-    width: 210px;
-    height: 280px;
-    border-radius: 4px;
-    background: black;
+    position: relative;
 }
 
 main img:hover{
     opacity: 0.65;
     transition: 0.3s;
+    padding:5px;
+    border-radius: 4px;
 }
 
 main img{
     opacity: 1;
     transition: 0.3s;
+    width: 210px;
+    height: 280px;
+    border-radius: 4px;
+}
+
+.game-name button{
+    height: 20px;
+    padding: 0;
+    font-size: 13px;
+    float: right;
 }
