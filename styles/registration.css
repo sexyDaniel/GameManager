@@ -14,7 +14,9 @@
     padding-top: 130px;
 }
 
-
+.a{
+    transition: 0.3s;
+}
 
 form input{
     display: block;
@@ -25,7 +27,8 @@ form input{
     height: 50px;
     background-color: rgb(59, 59, 59);
     outline: none;
-    color:#F5F5F5; ;
+    color:#F5F5F5; 
+    padding-left: 10px;
 }
 
 form button{
@@ -40,7 +43,6 @@ form button{
     background-color: #037BEE;
     outline: none !important;
     color:#F5F5F5; 
-
 }
 
 button:hover {
