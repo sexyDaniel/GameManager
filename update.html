@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="styles/reset.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/update.css"/>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(18,18,18);">
+    <div class="navigation">
+        <h1>Admin form</h1>
+        <ul>
+            <li>
+                <a href="admin.html">Список игр</a>
+            </li>
+            <li>
+                <a class="active" href="#">Добавить новую игру</a>
+            </li>
+        </ul>
+    </div>
+    <main>
+        <div class="container">
+            <div class="content">
+                <div id="0" class="updateForm">
+                    <h2>Update Game</h2>
+                    <div class="restriction">
+                        <form class="update-form">
+                            <input placeholder="Название игры" value="Battlefront 2">
+                            <input type="text" placeholder="Разработчик" value="EA Games">
+                            <input type="text" placeholder="Издатель" value="Electronic Arts">
+                            <input type="datetime" placeholder="Дата выхода" value="18 нояб. 2017 г">
+                            <div class="photo row">
+                                <div class="col-6">
+                                    <textarea class="link" type="text" placeholder="Ссылка на изображение">https://cdn1.epicgames.com/b156c3365a5b4cb9a01a5e1108b4e3f4/offer/EGS_STARWARSBattlefrontIICelebrationEdition_DICE_S2-1200x1600-11d040719a8457bbf36cabbe89b200db.jpg?h=854&resize=1&w=640</textarea>
+                                </div>
+                                <div class="col-6">
+                                    <img src="https://cdn1.epicgames.com/b156c3365a5b4cb9a01a5e1108b4e3f4/offer/EGS_STARWARSBattlefrontIICelebrationEdition_DICE_S2-1200x1600-11d040719a8457bbf36cabbe89b200db.jpg?h=854&resize=1&w=640">
+                                </div>
+                            </div>
+                        
+                            <input type="text" placeholder="Ссылка на изображение в доп инфо">
+                            <textarea type="text" placeholder="Описание игры">Станьте героем самых фантастических сражений вселенной «ЗВЁЗДНЫХ ВОЙН™» в «STAR WARS™ Battlefront™ II: праздничном издании»! В издание входит копия игры STAR WARS Battlefront II и полная коллекция предметов для персонализации, которые можно приобрести в игре, — от контента, доступного со дня выхода игры, и до новинок по мотивам фильма «Звёздные Войны™: Скайуокер. Восход™».*</textarea>
+                            <h5>Системные требования</h5>
+                            <input placeholder="ОС">
+                            <input type="text" placeholder="Процессор">
+                            <input type="number" placeholder="Оперативная память (ГБ)">
+                            <input type="number" placeholder="Место на диске (ГБ)">
+                            <input type="text" placeholder="Видеокарта">
+                            <button type="submit">Изменить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script  src="scripts/update.js"></script>
+</body>
+</html>
