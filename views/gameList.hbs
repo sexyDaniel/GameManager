@@ -1,0 +1,24 @@
+<main>
+    <div class="container">
+        <h5>Игры для скачивания</h5>
+        <div class="content">
+            <ul class="list">
+                {{#each games}}
+                    <li>
+                        <a href="#">
+                            <div class="picture center">
+                                <img alt={{gameName}} src={{photoLink}}>
+                                <div class="description">
+                                    <span class="game-name">{{gameName}}
+                                        <button class="btn btn-danger">Удалить</button>
+                                    </span>
+                                    <span class="developer-name">{{developer}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</main>

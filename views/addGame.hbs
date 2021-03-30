@@ -1,0 +1,34 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div id="0" class="addForm">
+                <h2>Add new Game</h2>
+                <div class="restriction">
+                    <form class="registration-form" action="/admin/addGame" method="POST">
+                        <input name="gameName" placeholder="Название игры">
+                        <input name="gameDaveloper" type="text" placeholder="Разработчик">
+                        <input name="publisher" type="text" placeholder="Издатель">
+                        <input name="publicationDate" type="datetime" placeholder="Дата выхода">
+                        <div class="photo row">
+                                <div class="col-6">
+                                    <textarea name="photoLink" class="link" type="text" placeholder="Ссылка на изображение"></textarea>
+                                </div>
+                                <div class="col-6">
+                                    <img \>
+                                </div>
+                            </div>
+                        <input name="infoPhotoLink" type="text" placeholder="Ссылка на изображение в доп инфо">
+                        <textarea name="gameDescription" type="text" placeholder="Описание игры"></textarea>
+                        <h5>Системные требования</h5>
+                        <input name="os" placeholder="ОС">
+                        <input name="processor" type="text" placeholder="Процессор">
+                        <input name="RAMmemory" type="number" placeholder="Оперативная память (ГБ)">
+                        <input name="diskSpace" type="number" placeholder="Место на диске (ГБ)">
+                        <input name="videocard" type="text" placeholder="Видеокарта">
+                        <button type="submit">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

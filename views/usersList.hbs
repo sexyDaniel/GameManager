@@ -1,0 +1,18 @@
+<main>
+    <div class="container">
+        <h5>Пользователи</h5>
+        <div class="content">
+            <ul class="list">
+                {{#each users}}
+                    <div class="picture center">
+                        <div class="description">
+                            <span class="game-name">{{this.username}}
+                                <button class="btn btn-danger">Удалить</button>
+                            </span>
+                        </div>   
+                    </div>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</main>

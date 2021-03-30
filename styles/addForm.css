@@ -76,3 +76,34 @@ input:focus {
     padding-bottom: 60px;
     padding-top: 30px;
 }
+
+
+textarea{
+    min-height: 50px;
+    max-height: 150px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgb(59, 59, 59);
+    outline: none;
+    color:#F5F5F5; 
+    padding-left: 10px;
+}
+
+img{
+    opacity: 1;
+    transition: 0.3s;
+    width: 210px;
+    height: 280px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.link{
+    min-width: 210px;
+    min-height: 280px;
+    
+}
