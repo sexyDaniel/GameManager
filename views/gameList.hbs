@@ -5,14 +5,16 @@
             <ul class="list">
                 {{#each games}}
                     <li>
-                        <a href="#">
+                        <a href="/admin/updateGame?id={{_id}}">
                             <div class="picture center">
                                 <img alt={{gameName}} src={{photoLink}}>
                                 <div class="description">
-                                    <span class="game-name">{{gameName}}
-                                        <button class="btn btn-danger">Удалить</button>
-                                    </span>
+                                    <span class="game-name">{{gameName}}</span>
                                     <span class="developer-name">{{developer}}</span>
+                                    <form action="/admin/deleteGame" method="POST">
+                                            <input type="hidden" name="deleteGame" value={{_id}}>
+                                            <button class="btn btn-danger" type="submit">Удалить</button>
+                                    </form>
                                 </div>
                             </div>
                         </a>

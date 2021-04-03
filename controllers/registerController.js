@@ -25,7 +25,7 @@ exports.register = async function (request, response,next) {
             console.log(result);
             setCookie(request,response,result)
         });
-        response.render("gameList.hbs",{
+        response.redirect("/gameMenager/gameList",{
             isRegister: false,
             username:request.body.userLogin
         });
@@ -35,7 +35,6 @@ exports.register = async function (request, response,next) {
 exports.login = async function (request, response) {
     console.log(request.body.userLogin)
     const condidate = await User.findOne({username:request.body.userLogin})
-    console.log(condidate)
     if(condidate){
         const passRes = bcrypt.compareSync(request.body.userPassword,condidate.password)
         if(passRes&&request.body.userLogin==="admin12345"){
@@ -55,6 +54,11 @@ exports.login = async function (request, response) {
             message:"Пользователь с таким username не найден"
         })
     }
+}
+
+exports.logout = function (request, response) {
+    response.clearCookie("token");
+    response.redirect("/")
 }
 
 exports.getCookie = (req, res) => {

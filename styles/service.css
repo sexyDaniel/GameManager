@@ -3,6 +3,25 @@
     flex-wrap: wrap;
 }
 
+.user_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user_list li{
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 120px;
+    background-color: #4e4e4e2e;
+    border-radius: 5px;
+}
+
+.user_list button{
+    font-size: 12px;
+    padding: 3px;
+    margin-top: 10px;
+}
+
 .item{
     display: block;
     flex: none;

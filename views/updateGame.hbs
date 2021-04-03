@@ -1,0 +1,35 @@
+<main>
+    <div class="container">
+        <div class="content">
+            <div id="0" class="addForm">
+                <h2>Update Game</h2>
+                <div class="restriction">
+                    <form class="registration-form" action="/admin/updateGame" method="POST">
+                        <input type="hidden" name="id" value={{updateGame._id}}>
+                        <input name="gameName" placeholder="Название игры" value="{{updateGame.gameName}}">
+                        <input name="gameDaveloper" type="text" placeholder="Разработчик" value="{{updateGame.developer}}">
+                        <input name="publisher" type="text" placeholder="Издатель" value='{{updateGame.publisher}}'>
+                        <input name="publicationDate" type="datetime" placeholder="Дата выхода" value='{{updateGame.publicationDate}}'>
+                        <div class="photo row">
+                                <div class="col-6">
+                                    <textarea name="photoLink" class="link" type="text" placeholder="Ссылка на изображение">{{updateGame.photoLink}}</textarea>
+                                </div>
+                                <div class="col-6">
+                                    <img src='{{updateGame.photoLink}}' \>
+                                </div>
+                            </div>
+                        <input name="infoPhotoLink" type="text" placeholder="Ссылка на изображение в доп инфо" value='{{updateGame.infoPhotoLink}}'>
+                        <textarea name="gameDescription" type="text" placeholder="Описание игры">{{updateGame.gameDescription}}</textarea>
+                        <h5>Системные требования</h5>
+                        <input name="os" placeholder="ОС" value='{{updateGame.os}}'>
+                        <input name="processor" type="text" placeholder="Процессор" value='{{updateGame.processor}}'>
+                        <input name="RAMmemory" type="number" placeholder="Оперативная память (ГБ)" value='{{updateGame.RAMmemory}}'>
+                        <input name="diskSpace" type="number" placeholder="Место на диске (ГБ)" value='{{updateGame.diskSpace}}'>
+                        <input name="videocard" type="text" placeholder="Видеокарта" value='{{updateGame.videocard}}'>
+                        <button type="submit">Изменить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

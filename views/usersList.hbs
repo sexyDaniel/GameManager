@@ -2,15 +2,19 @@
     <div class="container">
         <h5>Пользователи</h5>
         <div class="content">
-            <ul class="list">
+            <ul class="user_list">
                 {{#each users}}
-                    <div class="picture center">
+                <li>
+                    <div class="user center">
                         <div class="description">
-                            <span class="game-name">{{this.username}}
-                                <button class="btn btn-danger">Удалить</button>
-                            </span>
+                            <span class="game-name">{{username}}</span>
+                            <form action="/admin/deleteUser" method="POST">
+                                <input type="hidden" name="deleteGame" value={{_id}}>
+                                <button class="btn btn-danger" type="submit">Удалить</button>
+                            </form>
                         </div>   
                     </div>
+                </li>
                 {{/each}}
             </ul>
         </div>

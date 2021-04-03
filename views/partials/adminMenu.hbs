@@ -2,5 +2,10 @@
     <h1>{{username}}</h1>
     <ul>
         {{setLinks links activeIndex}}
+        <li>
+            <form action="/logout" method="POST">
+                <button class="btn btn-danger" type="submit">Выход</button>
+            </form>
+        </li>
     </ul>
 </div>

@@ -10,6 +10,7 @@ registerRoute.use(cookieParser('secret key'))
 registerRoute.get("/", registerController.index);
 registerRoute.post("/register",urlencodedParser, registerController.register);
 registerRoute.post("/login",urlencodedParser, registerController.login);
+registerRoute.post("/logout", registerController.logout);
 
 registerRoute.get('/get-cookie', registerController.getCookie)
  
