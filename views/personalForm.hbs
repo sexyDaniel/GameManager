@@ -1,0 +1,25 @@
+<main>
+    <div class="container">
+        <h5>Личный кабинет</h5>
+        <form class="roomForm" action="/gameManager/PersonalRoom/Change" method="POST">
+            <div>
+                <span>ID</span>
+                <input hidden type="text" name="_id" value="{{user._id}}">
+                <input disabled type="text" name="_id" value="{{user._id}}">
+            </div>
+            <div>
+                <span>Имя</span>
+                <input type="text" name="FirstName" value="{{user.firtsName}}">
+            </div>
+            <div>
+                <span>Фамилия</span>
+                <input type="text" name="LastName" value="{{user.lastName}}">
+            </div>
+            <div>
+                <span>Email</span>
+                <input type="text" name="Email" value="{{user.email}}">
+            </div>
+            <button class="btn btn-primary" type="submit">Сохранить</button>
+        </form>
+    </div>
+</main>

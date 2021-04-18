@@ -8,4 +8,11 @@
             <a href="#">Аутентификация</a>
         </li>
     </ul>
+    <ul class="errors" style="color: red;">
+        {{#each errors}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
+    </ul>
 </div>

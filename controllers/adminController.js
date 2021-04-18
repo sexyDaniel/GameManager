@@ -1,5 +1,6 @@
 var User = require("../models/user.js");
 var Game = require("../models/game.js");
+var UserGames = require("../models/userGame.js");
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
@@ -37,14 +38,30 @@ exports.getGameList = async function (request, response) {
 exports.getUsers = async function (request, response) {
     var cookie = JSON.parse(getCookie(request,response))
     var users = await User.find();
-    users = users.map(user=>user.toJSON())
+    var userList = []
+    for(var i =0;i<users.length;i++){
+        var user = users[i].toJSON()
+        if (user.username!=="admin12345")
+        userList.push(user)
+    }
     response.render("usersList.hbs",{
         username:cookie.username,
         isAdmin: true,
         links: links,
-        users:users,
+        users:userList,
         activeIndex:2
     });
+}
+
+exports.getJsonUsers = async function (request, response) {
+    var users = await User.find();
+    var userList = []
+    for(var i =0;i<users.length;i++){
+        var user = users[i].toJSON()
+        if (user.username!=="admin12345")
+        userList.push(user)
+    }
+    response.status(200).json(userList);
 }
 
 exports.addGame = async function (request, response) {
@@ -81,6 +98,7 @@ exports.deleteGame = async function (request, response) {
     if(deleteGame){
         console.log(deleteGame)
         await Game.remove({_id:daleteId})
+        await UserGames.remove({gameId:daleteId})
         response.redirect("/admin/gameList")
     }
 }
@@ -119,41 +137,20 @@ exports.updateGame = async function (request,response){
 }
 
 exports.deleteUser = async function (request, response) {
-    var deleteId = request.body.deleteGame;
+    console.log("Удаление пользователя")
+    var deleteId = request.params.id;
+    console.log(deleteId)
     var deleteUser= await User.findOne({_id:deleteId})
     if(deleteUser){
         console.log(deleteUser)
         await User.remove({_id:deleteId})
+        await UserGames.remove({userId:deleteId})
         response.redirect("/admin/users")
     }
 }
 
-getCookie = (req, res) => {
-    console.log('Cookie: ', req.cookies)
+exports.getCookie = (req, res) => {
     var arr = req.cookies.token.split(".")
-    console.log(arr)
-    console.log(atob(arr[1]))
     return atob(arr[1])
 }
 
-// exports.register = async function (request, response,next) {
-//     console.log(request.body.userLogin);
-//     const candidate = await User.findOne({username:request.body.userLogin});
-//     if (candidate){
-//         response.status(409).json({message:"Такой пользователь уже есть"})
-//     }
-//     else{
-//         var newUser = new User({
-//             "username": request.body.userLogin,
-//             "password": bcrypt.hashSync(request.body.userPassword, bcrypt.genSaltSync(10), null)
-//         });
-//         newUser.save(function (err, result) {
-//             console.log(result);
-//             setCookie(request,response,result)
-//         });
-//         response.render("gameList.hbs",{
-//             isRegister: false,
-//             username:request.body.userLogin
-//         });
-//     }
-// }

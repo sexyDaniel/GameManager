@@ -2,11 +2,18 @@
     <h1>Game Manager</h1>
     <h6 class="user-name">Пользователь: {{username}}</h6>
     <ul>
+        {{setLinks links activeIndex}}
         <li>
-            <a class="active" href="#">Игры для скачивания</a>
+            <form action="/logout" method="POST">
+                <button class="btn btn-danger" type="submit">Выход</button>
+            </form>
         </li>
-        <li>
-            <a href="#">Установленные игры</a>
-        </li>
+    </ul>
+    <ul class="errors" style="color: red;">
+        {{#each errors}}
+            <li>
+                {{this}}
+            </li>
+        {{/each}}
     </ul>
 </div>

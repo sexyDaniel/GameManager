@@ -1,0 +1,75 @@
+<main>
+    <div class="gameLogo" style="background-image: url({{game.infoPhotoLink}});">
+        <div class="blur text-center">
+            <span>{{game.gameName}}</span>
+            <form action="/gameManager/DownloadGames/AddGame" method="POST">
+                <input name="id" type="hidden" value={{game._id}}>
+                <button class="btn btn-primary" type="submit">Скачать</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    Об игре {{game.gameName}}
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="title">Разработчик</span>
+                            <span class="titleName">{{game.developer}}</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="title">Издатель</span>
+                            <span class="titleName">{{game.publisher}}</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="title">Дата выхода</span>
+                            <span class="titleName">{{game.publicationDate}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>
+                            {{game.gameDescription}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    Системные требования
+                </div>
+                <div class="col-9 system-rulse">
+                    <div class="row">
+                        <table>
+                            <th>Рекомендованные</th>
+                            <tr>
+                                <td class="title">OC</td>
+                                <td>{{game.os}}</td>
+                            </tr>
+                            <tr>
+                                <td class="title">Процессор</td>
+                                <td>{{game.processor}}</td>
+                            </tr>
+                            <tr>
+                                <td class="title">Оперативная память</td>
+                                <td>{{game.RAMmemory}} ГБ</td>
+                            </tr>
+                            <tr>
+                                <td class="title">Место на диске</td>
+                                <td>{{game.diskSpace}} ГБ</td>
+                            </tr>
+                            <tr>
+                                <td class="title">Видеокарта</td>
+                                <td>{{game.videocard}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</main>

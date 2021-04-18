@@ -1,0 +1,49 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h5>Игры для скачивания</h5>
+                <div class="content">
+                    <ul class="list">
+                        {{#each games}}
+                            <li>
+                                <a href="/gameManager/DownloadGames/{{gameName}}">
+                                    <div class="picture center">
+                                        <img alt={{gameName}} src={{photoLink}}>
+                                        <div class="description">
+                                            <span class="game-name">{{gameName}}</span>
+                                            <span class="developer-name">{{developer}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <h5>Поиск</h5>
+                <form class="searchForm" action="/gameManager/DownloadGames/search" method="POST">
+                    <input type="text" name="searchGame" placeholder="Название игры">
+                    <button class="btn btn-primary" type="submit">Поиск</button>
+                </form>
+                <h5>Сортировка</h5>
+                <form class="sortForm" action="/gameManager/DownloadGames/sort" method="POST">
+                    <div>
+                        <input type="radio" name="sortGame" value="gameName">
+                        <span>По Алфавиту</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="sortGame" value="diskSpace">
+                        <span>По месту на диске</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="sortGame" value="developer">
+                        <span>По Издателю</span>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Применить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

@@ -10,24 +10,27 @@ exports.index = function (request, response) {
     });;
 }
 
-exports.register = async function (request, response,next) {
+exports.register = async function (request, response) {
     console.log(request.body.userLogin);
     const candidate = await User.findOne({username:request.body.userLogin});
     if (candidate){
-        response.status(409).json({message:"Такой пользователь уже есть"})
+        response.render("register.hbs",{
+            isRegister: true,
+            errors:["Такой пользователь уже есть"]
+        });
     }
     else{
         var newUser = new User({
             "username": request.body.userLogin,
-            "password": bcrypt.hashSync(request.body.userPassword, bcrypt.genSaltSync(10), null)
+            "password": bcrypt.hashSync(request.body.userPassword, bcrypt.genSaltSync(10), null),
+            "firtsName":"",
+            "lastName":"",
+            "email":""
         });
         newUser.save(function (err, result) {
             console.log(result);
             setCookie(request,response,result)
-        });
-        response.redirect("/gameMenager/gameList",{
-            isRegister: false,
-            username:request.body.userLogin
+            response.redirect("/gameManager/DownloadGames");
         });
     }
 }
@@ -42,17 +45,15 @@ exports.login = async function (request, response) {
             response.redirect("/admin/gameList")
         }else if (passRes&&request.body.userLogin!=="admin12345"){
             setCookie(request,response,condidate)
-            response.render("gameList.hbs",{
-                isRegister: false,
-                username:request.body.userLogin
-            });
+            response.redirect("/gameManager/DownloadGames")
         }else{
             response.status(401).json({message:"Пароли не совпадают"})
         }
     }else{
-        response.status(404).json({
-            message:"Пользователь с таким username не найден"
-        })
+        response.render("register.hbs",{
+            isRegister: true,
+            errors:["Пользователь с таким логином не найден"]
+        });;
     }
 }
 

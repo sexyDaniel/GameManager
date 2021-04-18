@@ -4,14 +4,14 @@
         <div class="content">
             <ul class="list">
                 {{#each games}}
-                    <li class="item">
-                        <a href="/admin/updateGame?id={{_id}}">
+                    <li>
+                        <a href="/gameManager/DownloadGames/{{gameName}}">
                             <div class="picture center">
                                 <img alt={{gameName}} src={{photoLink}}>
                                 <div class="description">
                                     <span class="game-name">{{gameName}}</span>
                                     <span class="developer-name">{{developer}}</span>
-                                    <form action="/admin/deleteGame" method="POST">
+                                    <form action="/gameManager/installedGames/deleteGame" method="POST">
                                             <input type="hidden" name="deleteGame" value={{_id}}>
                                             <button class="btn btn-danger" type="submit">Удалить</button>
                                     </form>

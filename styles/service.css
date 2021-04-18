@@ -11,7 +11,7 @@
 .user_list li{
     margin-top: 20px;
     margin-right: 20px;
-    width: 120px;
+    width: 20%;
     background-color: #4e4e4e2e;
     border-radius: 5px;
 }
@@ -27,11 +27,11 @@
     flex: none;
     width: 20%;
     box-sizing: inherit;
+    margin-right: 15px;
 }
 
 .picture{
     width: 210px;
-    height: 280px;
     position: relative;
 }
 
